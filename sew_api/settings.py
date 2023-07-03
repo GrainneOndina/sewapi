@@ -60,7 +60,7 @@ DEBUG = True
 if 'HEROKU_SEW_API' in os.environ:
     DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'sew-api.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'sew-api-6d5f4cb2934c.herokuapp.com', '8000-linnsilver-sewapi-zyugvoa06is.ws-eu101.gitpod.io',]
 
 
 # Application definition
