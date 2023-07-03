@@ -1,13 +1,14 @@
 from django.db import IntegrityError
 from rest_framework import serializers
-from .models import Like
+from likes.models import Like
 
 
 class LikeSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
+    user = serializers.ReadOnlyField(source='user.username')
+
     class Meta:
         model = Like
-        fields = ['id', 'created_at', 'owner', 'post']
+        fields = ['id', 'user', 'content_type', 'object_id', 'created_at']
 
     def create(self, validated_data):
         try:
