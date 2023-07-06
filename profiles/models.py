@@ -22,7 +22,7 @@ class Profile(models.Model):
 
 def create_profile(sender, instance, created, **kwargs):
     if created:
-        Profile.objects.create(owner=instance)
+        Profile.objects.create(owner=instance, username=instance.username)
 
 
 post_save.connect(create_profile, sender=User)
