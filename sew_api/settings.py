@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+JWT_AUTH_COOKIE = 'my-app-auth'
 
 from pathlib import Path
 import os
@@ -33,12 +34,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Django REST Framework Settings
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
+    'DEFAULT_AUTHENTICATION_CLASSES': [(
         'rest_framework.authentication.SessionAuthentication'
         if 'DEV' in os.environ
         else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
-    ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    )],
+    'DEFAULT_PAGINATION_CLASS':
+        'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
     'DATETIME_FORMAT': '%d %b %Y',
 }
@@ -65,7 +67,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if 'HEROKU_SEW_API' in os.environ:
     DEBUG = False
@@ -86,7 +88,14 @@ INSTALLED_APPS = [
     'cloudinary',
     'rest_framework',
     'django_filters',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'django.contrib.sites',
     'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+    'corsheaders',
 
 
     'profiles',
@@ -96,7 +105,9 @@ INSTALLED_APPS = [
     'likes',
 ]
 
+SITE_ID = 1
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
