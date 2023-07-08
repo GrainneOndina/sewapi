@@ -119,13 +119,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'sew_api.urls'
 
-CORS_ORIGIN_ALLOW_ALL = False
-
-CORS_ALLOWED_ORIGINS = [
-    'https://3000-linnsilver-sewlotpj5-6yqk4vyrska.ws-eu101.gitpod.io',
-]
-
 CORS_ALLOW_CREDENTIALS = True
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {
