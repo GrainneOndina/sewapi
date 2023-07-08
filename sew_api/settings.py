@@ -26,7 +26,7 @@ CLOUDINARY_STORAGE = {
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-linnsilver-sewapi-zyugvoa06is.ws-eu101.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-linnsilver-sewapi-zyugvoa06is.ws-eu101.gitpod.io', 'https://sew-api-6d5f4cb2934c.herokuapp.com']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
