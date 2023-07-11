@@ -1,0 +1,82 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 11, 2023 - 12:49:45
+Django version 4.2.2, using settings 'sew_api.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 11, 2023 - 12:53:12
+Django version 4.2.2, using settings 'sew_api.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 11, 2023 - 13:18:41
+Django version 4.2.2, using settings 'sew_api.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 11, 2023 - 13:41:14
+Django version 4.2.2, using settings 'sew_api.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 11, 2023 - 13:41:17
+Django version 4.2.2, using settings 'sew_api.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 11, 2023 - 13:42:21
+Django version 4.2.2, using settings 'sew_api.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 11, 2023 - 13:44:10
+Django version 4.2.2, using settings 'sew_api.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 11, 2023 - 13:44:14
+Django version 4.2.2, using settings 'sew_api.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 11, 2023 - 13:44:53
+Django version 4.2.2, using settings 'sew_api.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 11, 2023 - 13:44:55
+Django version 4.2.2, using settings 'sew_api.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+

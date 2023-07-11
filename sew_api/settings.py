@@ -67,12 +67,12 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if 'HEROKU_SEW_API' in os.environ:
     DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'sew-api-6d5f4cb2934c.herokuapp.com', '8000-linnsilver-sewapi-2ddjs69urk8.ws-eu101.gitpod.io',]
+ALLOWED_HOSTS = ['localhost', 'sew-api-6d5f4cb2934c.herokuapp.com', '8000-linnsilver-sewapi-t72jb9pz91y.ws-eu101.gitpod.io',]
 
 
 # Application definition
