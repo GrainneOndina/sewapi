@@ -9,6 +9,7 @@ class Post(models.Model):
     image = models.ImageField(
         upload_to='post_images/', null=True, blank=True
     )
+    likes = models.ManyToManyField(User, related_name='liked_posts', blank=True)
 
     class Meta:
         ordering = ['-created_at']
