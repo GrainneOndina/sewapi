@@ -18,8 +18,6 @@ import dj_database_url
 if os.path.exists('env.py'):
     import env
 
-JWT_AUTH_COOKIE = 'my-app-auth'
-
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
@@ -68,7 +66,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if 'HEROKU_SEW_API' in os.environ:
     DEBUG = False
