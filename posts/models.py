@@ -6,13 +6,12 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    image = models.ImageField(
-        upload_to='post_images/', null=True, blank=True
-    )
+    url = models.URLField(blank=True)
+    image = models.ImageField(upload_to='post_images/', null=True, blank=True)
     likes = models.ManyToManyField(User, related_name='liked_posts', blank=True)
 
     class Meta:
         ordering = ['-created_at']
 
     def __str__(self):
-        return f'{self.id} {self.content}'
+        return f'{self.id} {self.text_content}'
