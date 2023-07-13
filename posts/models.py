@@ -6,8 +6,8 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    url = models.URLField(blank=True)
-    image = models.ImageField(upload_to='post_images/', null=True, blank=True)
+    url = models.URLField(null=True)
+    image = models.ImageField(upload_to='post_images/', null=True)
     likes = models.ManyToManyField(User, related_name='liked_posts', blank=True)
 
     class Meta:
