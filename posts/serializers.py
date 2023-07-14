@@ -9,6 +9,7 @@ class PostSerializer(serializers.ModelSerializer):
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     image = serializers.ImageField(required=False)
     url = serializers.URLField(required=False)
+    likes_count = serializers.SerializerMethodField()
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -23,10 +24,13 @@ class PostSerializer(serializers.ModelSerializer):
         request = self.context['request']
         return request.user == obj.owner
     
+    def get_likes_count(self, obj):
+        return obj.likes.count()
+    
     class Meta:
         model = Post
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'created_at', 'updated_at',
-            'content', 'image', 'url'
+            'content', 'image', 'url', 'likes', 'likes_count'
         ]
