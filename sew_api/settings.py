@@ -25,7 +25,7 @@ CLOUDINARY_STORAGE = {
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-linnsilver-sewapi-og3ujo6e79n.ws-eu101.gitpod.io', 'https://sew-api-6d5f4cb2934c.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-linnsilver-sewapi-p3ewlzipt77.ws-eu101.gitpod.io', 'https://sew-api-6d5f4cb2934c.herokuapp.com']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -66,12 +66,12 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if 'HEROKU_SEW_API' in os.environ:
     DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'sew-api-6d5f4cb2934c.herokuapp.com', '8000-linnsilver-sewapi-og3ujo6e79n.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = ['localhost', 'sew-api-6d5f4cb2934c.herokuapp.com', '8000-linnsilver-sewapi-p3ewlzipt77.ws-eu101.gitpod.io']
 
 
 # Application definition
