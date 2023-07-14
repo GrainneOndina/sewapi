@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from posts.models import Post
 from likes.models import Like
-from django.contrib.contenttypes.models import ContentType
 
 class PostSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
@@ -27,10 +26,14 @@ class PostSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
     
     def get_likes_count(self, obj):
-        return obj.likes.count()
+        return obj.post_likes.count()
 
     def get_like_id(self, obj):
-        return obj.likes.count()
+        user = self.context['request'].user
+        if user.is_authenticated:
+            like = Like.objects.filter(owner=user, post=obj).first()
+            return like.id if like else None
+        return None
     
     class Meta:
         model = Post

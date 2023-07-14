@@ -11,10 +11,13 @@ class Like(models.Model):
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
     created_at = models.DateTimeField(auto_now_add=True)
+    post = models.ForeignKey(
+        Post, related_name='post_likes', on_delete=models.CASCADE
+    )
 
     class Meta:
         ordering = ['-created_at']
-        unique_together = ['owner', 'content_type', 'object_id']
+        unique_together = ['owner', 'content_type', 'object_id', 'post']
     
     def __str__(self):
-        return f'{self.owner} {self.object_id}'
+        return f'{self.owner} {self.object_id} {self.post}'
