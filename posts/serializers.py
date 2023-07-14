@@ -29,16 +29,8 @@ class PostSerializer(serializers.ModelSerializer):
     def get_likes_count(self, obj):
         return obj.likes.count()
 
-    def get_like_id(self, obj):
-        request = self.context.get('request')
-        if request and request.user.is_authenticated:
-            try:
-                like = Like.objects.get(user=request.user, content_type=ContentType.objects.get_for_model(Post), object_id=obj.id)
-                return like.id
-            except Like.DoesNotExist:
-                return None
-        return None
-
+    #def get_like_id(self, obj):
+    #    return obj.likes.count()
     
     class Meta:
         model = Post
