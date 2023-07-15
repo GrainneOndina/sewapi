@@ -8,7 +8,7 @@ class LikeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Like
-        fields = ['id', 'created_at', 'owner', 'content_type', 'object_id'] #
+        fields = ['id', 'created_at', 'owner', 'content_type'] #
 
     def create(self, validated_data):
         try:
