@@ -1,25 +1,30 @@
 from rest_framework import generics, permissions
 from sew_api.permissions import IsOwnerOrReadOnly
-from .models import Follow
-from .serializers import FollowSerializer
+from .models import Follower
+from .serializers import FollowerSerializer
 
-class FollowList(generics.ListCreateAPIView):
+
+class FollowerList(generics.ListCreateAPIView):
     """
-    List all follows, i.e., all instances of a user following another user.
-    Create a follow, i.e., follow a user if logged in.
+    List all followers, i.e. all instances of a user
+    following another user'.
+    Create a follower, i.e. follow a user if logged in.
+    Perform_create: associate the current logged in user with a follower.
     """
-    permission_classes = [permissions.IsAuthenticated]
-    queryset = Follow.objects.all()
-    serializer_class = FollowSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = Follower.objects.all()
+    serializer_class = FollowerSerializer
 
     def perform_create(self, serializer):
-        serializer.save(follower=self.request.user)
+        serializer.save(owner=self.request.user)
 
-class FollowDetail(generics.RetrieveDestroyAPIView):
+
+class FollowerDetail(generics.RetrieveDestroyAPIView):
     """
-    Retrieve a follow.
-    Destroy a follow, i.e., unfollow someone if the owner.
+    Retrieve a follower
+    No Update view, as we either follow or unfollow users
+    Destroy a follower, i.e. unfollow someone if owner
     """
     permission_classes = [IsOwnerOrReadOnly]
-    queryset = Follow.objects.all()
-    serializer_class = FollowSerializer
+    queryset = Follower.objects.all()
+    serializer_class = FollowerSerializer

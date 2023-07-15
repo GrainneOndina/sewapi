@@ -4,7 +4,6 @@ from django_filters.rest_framework import DjangoFilterBackend
 from sew_api.permissions import IsOwnerOrReadOnly
 from .models import Profile
 from .serializers import ProfileSerializer
-from followers.models import Follow
 
 
 class ProfileList(generics.ListAPIView):
@@ -14,7 +13,7 @@ class ProfileList(generics.ListAPIView):
     """
     queryset = Profile.objects.annotate(
         posts_count=Count('owner__post', distinct=True),
-        followers_count=Count('owner__followers', distinct=True),
+        followers_count=Count('owner__followed', distinct=True),
         following_count=Count('owner__following', distinct=True)
     ).order_by('-created_at')
     serializer_class = ProfileSerializer
@@ -24,14 +23,14 @@ class ProfileList(generics.ListAPIView):
     ]
     filterset_fields = [
         'owner__following__followed__profile',
-        'owner__followers__follower__profile',
+        'owner__followed__owner__profile',
     ]
     ordering_fields = [
         'posts_count',
         'followers_count',
         'following_count',
         'owner__following__created_at',
-        'owner__followers__created_at',
+        'owner__followed__created_at',
     ]
 
 
@@ -42,7 +41,7 @@ class ProfileDetail(generics.RetrieveUpdateAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Profile.objects.annotate(
         posts_count=Count('owner__post', distinct=True),
-        followers_count=Count('owner__followers', distinct=True),
+        followers_count=Count('owner__followed', distinct=True),
         following_count=Count('owner__following', distinct=True)
     ).order_by('-created_at')
     serializer_class = ProfileSerializer
