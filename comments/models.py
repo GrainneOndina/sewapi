@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 
 
 class Comment(models.Model):
+    """
+    Model representing a comment on a post.
+    """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey('posts.Post', on_delete=models.CASCADE)
     parent_comment = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
@@ -15,4 +18,7 @@ class Comment(models.Model):
         ordering = ['-created_at']
 
     def __str__(self):
+        """
+        Return a string representation of the comment.
+        """
         return f'Comment {self.id}'

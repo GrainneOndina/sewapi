@@ -6,13 +6,20 @@ from .settings import (
     JWT_AUTH_SECURE,
 )
 
+
 @api_view()
 def welcome(request):
+    """
+    Welcome view.
+    """
     return render(request, 'welcome.html')
 
-# dj-rest-auth logout view fix
+
 @api_view(['POST'])
 def logout_route(request):
+    """
+    Logout view for dj-rest-auth.
+    """
     response = Response()
     response.set_cookie(
         key=JWT_AUTH_COOKIE,

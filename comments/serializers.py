@@ -1,9 +1,12 @@
 from django.contrib.humanize.templatetags.humanize import naturaltime
-
 from rest_framework import serializers
 from .models import Comment
 
+
 class CommentSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Comment model.
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
@@ -12,6 +15,9 @@ class CommentSerializer(serializers.ModelSerializer):
     updated_at = serializers.SerializerMethodField()
 
     def validate_image(self, value):
+        """
+        Validate the image field.
+        """
         if value.size > 2 * 1024 * 1024:
             raise serializers.ValidationError('Image size larger than 2MB!')
         if value.height > 4096:
@@ -21,13 +27,22 @@ class CommentSerializer(serializers.ModelSerializer):
         return value
 
     def get_is_owner(self, obj):
+        """
+        Determine if the current user is the owner of the comment.
+        """
         request = self.context['request']
         return request.user == obj.owner
 
     def get_created_at(self, instance):
+        """
+        Return the humanized created_at timestamp.
+        """
         return naturaltime(instance.created_at)
 
     def get_updated_at(self, obj):
+        """
+        Return the humanized updated_at timestamp.
+        """
         return naturaltime(obj.updated_at)
 
     class Meta:
@@ -38,10 +53,17 @@ class CommentSerializer(serializers.ModelSerializer):
             'content', 'image', 'created_at', 'updated_at',
         ]
 
+
 class CommentDetailSerializer(CommentSerializer):
+    """
+    Serializer for the Comment model that includes replies.
+    """
     replies = serializers.SerializerMethodField()
 
     def get_replies(self, obj):
+        """
+        Return the serialized replies for the comment.
+        """
         replies = Comment.objects.filter(parent_comment=obj)
         serializer = CommentSerializer(replies, many=True, context=self.context)
         return serializer.data

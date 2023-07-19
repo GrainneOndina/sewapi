@@ -7,7 +7,7 @@ from .serializers import CommentSerializer, CommentDetailSerializer
 
 class CommentList(generics.ListCreateAPIView):
     """
-    List comments or create a comment if logged in.
+    API view for listing and creating comments.
     """
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
@@ -15,6 +15,9 @@ class CommentList(generics.ListCreateAPIView):
     filterset_fields = ['post']
 
     def get_queryset(self):
+        """
+        Get the queryset for the comments list view.
+        """
         parent_comment_id = self.kwargs.get('parent_comment_id')
         if parent_comment_id:
             queryset = Comment.objects.filter(parent_comment_id=parent_comment_id)
@@ -23,12 +26,15 @@ class CommentList(generics.ListCreateAPIView):
         return queryset
 
     def perform_create(self, serializer):
+        """
+        Perform creation of a new comment.
+        """
         serializer.save(owner=self.request.user)
 
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     """
-    Retrieve a comment, or update or delete it by id if you own it.
+    API view for retrieving, updating, and deleting a comment.
     """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = CommentDetailSerializer
