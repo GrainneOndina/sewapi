@@ -10,31 +10,28 @@ Upon visiting
 To build a API
 
 ## Features
+Views a J.son array of all data.
+## ![Sew API](Assets/images/welcome.jpg)
 
 ###  Profiles
-Views a J.son array of all profiles.
-## ![Profiles](assets/images/)
+## ![Profiles](Assets/images/profiles.jpg)
 
 ### Posts
-Views a J.son array of all posts.
-## ![Posts](assets/images/)
+## ![Posts](Assets/images/posts.jpg)
 
 ### Comments
-Views a J.son array of all comments.
-## ![Comments](assets/images)
+## ![Comments](Assets/images/comments.jpg)
 
 ### Followers
-Views a J.son array of all followers.
-## ![Followers](assets/images/)
+## ![Followers](Assets/images/follows.jpg)
 
 ###  Likes
-Views a J.son array of all Likes.
-## ![Likes](assets/images/)
+## ![Likes](Assets/images/likes.jpg)
 
 
 ###  Admin panel
 In Django admin panel, admin can manage profiles, posts, comments, followers and likes.
-## ![Admin panel](assets/images/admin.jpg)
+
 
 
 ## Data Model
@@ -57,17 +54,34 @@ Frameworks, Libraries and Programs Used:
 ## Testing
 
 ### Manual testing
-|Command input              |Expected response                     |Results |
+|Input              |Expected response                     |Results |
 |----------------|-------------------------------|-----------------------------|
-|**Profiles**                |         | |
-|- Adding a profile |Views the profile in the API view        |Pass |
-|- Adding a profile |Makes the profile posible to sign in to Sewlot       |Pass |
-| |  | |
-|**Post**                |        | |
-|- Adding a post |Views the post in the API view        |Pass |
-|- Adding a post |Makes the post posible to view in Sewlot       |Pass |
-| |  | |
-
+|**Profiles** | | |
+|- Adding a profile in API |Views the profile in the API view |Pass |
+|- Adding a profile in API|Makes the profile possible to sign in to Sewlot |Pass |
+|- Adding a profile in Sewlot |Saves the profile in the API/Database |Pass |
+| | | |
+|**Post** | | |
+|- Adding a post in API |Views the post in the API view |Pass |
+|- Adding a post in API |Makes the post view in Sewlot |Pass |
+|- Adding a post in Sewlot |Saves the post in the API/Database |Pass |
+|- Removing a post in Sewlot |Removes the post in API/Database|Pass |
+| | | |
+|**Comments** | | |
+|- Adding a Comment in API |Views the Comment in the API view |Pass |
+| | | |
+|**Follows** | | |
+|- Adding a Follow in API |Views the Follow in the API view |Pass |
+|- Adding a Follow in API |Makes the Follow view in Sewlot |Pass |
+|- Adding a Follow in Sewlot |Saves the Follow in the API/Database |Pass |
+|- Removing a Follow in Sewlot |Removes the Follow from the API/Database |Pass |
+| | | |
+|**Likes** | | |
+|- Adding a Like in API |Views the Likes in the API view |Pass |
+|- Adding a Like in API |Makes the Likes view in Sewlot |Pass |
+|- Adding a Like in Sewlot |Saves the Likes from the API/Database |Pass |
+|- Removing a Like in Sewlot |Removes the Likes from the API/Database |Pass |
+| | | |
 
 ## Deployment
  **How you set up GitHub** 
