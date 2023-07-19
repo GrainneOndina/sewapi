@@ -1,50 +1,35 @@
 # Sew API
 #### [View the live project here](https://sew-api-6d5f4cb2934c.herokuapp.com/)
-Welcome to Sew API
+Welcome to Sew API this is the backend to Sewlot socialmedia platform.
 
 Upon visiting 
-![Am I responsiv](assets/images/)
+![Am I responsiv](Assets/images/responsive.png)
 
-## UX User experience
 ### Project Goals
 
 To build a API
-
-### Strategy
-To ensure an efficient 
-
-### Planning
-GitHub Project and Issues were used for Agile project planning. User Stories with acceptance criteria were defined in GitHub Issues, and development progress was managed on a Kanban board.
-
-
-### User stories:
-
-
-
-
 
 ## Features
 
 ###  Profiles
 Views a J.son array of all profiles.
-## ![Profiles](assets/images/home_p.jpg)
+## ![Profiles](assets/images/)
 
 ### Posts
 Views a J.son array of all posts.
-## ![Posts](assets/images/navigation.png)
+## ![Posts](assets/images/)
 
 ### Comments
 Views a J.son array of all comments.
-## ![Comments](assets/images/login_p.jpg)
+## ![Comments](assets/images)
 
 ### Followers
 Views a J.son array of all followers.
-## ![Followers](assets/images/signup_p.jpg)
+## ![Followers](assets/images/)
 
 ###  Likes
 Views a J.son array of all Likes.
-## ![Likes](assets/images/book_p.jpg)
-
+## ![Likes](assets/images/)
 
 
 ###  Admin panel
@@ -55,11 +40,11 @@ In Django admin panel, admin can manage profiles, posts, comments, followers and
 ## Data Model
 
 This project includes two custom models, Posts and Comments.
-## ![Data Model](assets/images/data_model.jpg)
+## ![Data Model](assets/images/)
 
 ## Site map
 Site map created in Jam bord.
-## ![Site map](assets/images/site_map.jpg)
+## ![Site map](assets/images/)
 
 
 ## Technologies
@@ -70,12 +55,6 @@ Frameworks, Libraries and Programs Used:
 
 
 ## Testing
-
--   JSHint
-
--  CI Python Linter
-
-
 
 ### Manual testing
 |Command input              |Expected response                     |Results |
@@ -95,7 +74,7 @@ Frameworks, Libraries and Programs Used:
 
 Create a [fork of the repository.](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository)
 
-1. Log in to GitHub and go to repository: [LinnSilver/sew_api](https://github.com/LinnSilver/sew_api/tree/9dd6fe7b3c736ed35f27d22643fbd1469f1de46d)]
+1. Log in to GitHub and go to repository: [LinnSilver/sew_api](https://github.com/LinnSilver/sew_api/tree/9dd6fe7b3c736ed35f27d22643fbd1469f1de46d)
 2. Click button fork -Create a new fork.
 3. Choose repository name.
 4. Click Create fork.
