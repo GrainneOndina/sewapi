@@ -10,7 +10,7 @@ Upon visiting
 To build a API
 
 ## Features
-Views a J.son array of all data.
+Store a J.son array of all data.
 ## ![Sew API](Assets/images/welcome.jpg)
 
 ###  Profiles
@@ -35,13 +35,7 @@ In Django admin panel, admin can manage profiles, posts, comments, followers and
 
 
 ## Data Model
-
 This project includes two custom models, Posts and Comments.
-## ![Data Model](assets/images/)
-
-## Site map
-Site map created in Jam bord.
-## ![Site map](assets/images/)
 
 
 ## Technologies
