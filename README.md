@@ -1,7 +1,7 @@
 # Sew API
 #### [View the live project here](https://sew-api-6d5f4cb2934c.herokuapp.com/)
 Welcome to Sew API this is the backend to Sewlot socialmedia platform.
-
+#### [View the frontend](https://github.com/LinnSilver/sewlot-pj5)
 Upon visiting 
 ![Am I responsiv](Assets/images/responsive.png)
 
