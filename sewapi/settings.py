@@ -25,7 +25,10 @@ CLOUDINARY_STORAGE = {
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-CSRF_TRUSTED_ORIGINS = ['https://43221-grainneondina-sewapi-3vhh0uz1cwa.ws-eu114.gitpod.io', 'https://sewapi-70ae1b7afedb.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-grainneondina-sewapi-3vhh0uz1cwa.ws-eu114.gitpod.io', 
+    'https://sewapi-70ae1b7afedb.herokuapp.com'
+    ]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -71,7 +74,12 @@ DEBUG = False
 if 'HEROKU_SEW_API' in os.environ:
     DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'sewapi-70ae1b7afedb.herokuapp.com', '43221-grainneondina-sewapi-3vhh0uz1cwa.ws-eu114.gitpod.io']
+ALLOWED_HOSTS = [
+    'localhost', 
+    '127.0.0.1', 
+    'sewapi-70ae1b7afedb.herokuapp.com', 
+    '8000-grainneondina-sewapi-3vhh0uz1cwa.ws-eu114.gitpod.io'
+    ]
 
 
 # Application definition
@@ -95,7 +103,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'dj_rest_auth.registration',
     'corsheaders',
-
 
     'profiles',
     'posts',
