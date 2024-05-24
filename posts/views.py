@@ -2,7 +2,7 @@ from django.db.models import Count
 from rest_framework import generics, permissions
 from .models import Post
 from .serializers import PostSerializer
-from sew_api.permissions import IsOwnerOrReadOnly
+from sewapi.permissions import IsOwnerOrReadOnly
 
 
 class PostList(generics.ListCreateAPIView):

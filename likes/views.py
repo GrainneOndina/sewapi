@@ -1,5 +1,5 @@
 from rest_framework import generics, permissions
-from sew_api.permissions import IsOwnerOrReadOnly
+from sewapi.permissions import IsOwnerOrReadOnly
 from .models import Like
 from .serializers import LikeSerializer
 
